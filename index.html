@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#130f11">
+
+  <meta
+    name="description"
+    content="Menú digital de EdeMil Burguer: hamburguesas, lomitos, papas fritas, panchos y bebidas. Consultá nuestros precios desde tu celular."
+  >
+
+  <title>EdeMil Burguer | Menú digital</title>
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="assets/img/icono.svg"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ACCESO RÁPIDO AL MENÚ -->
+  <a class="skip" href="#menu">
+    Ir al menú
+  </a>
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="wrap topbar">
+
+      <a
+        class="brand"
+        href="#inicio"
+        aria-label="EdeMil Burguer, inicio"
+      >
+        <span class="brand-icon">🍔</span>
+
+        <span>
+          Ede<span>Mil</span>
+          <small>BURGUER</small>
+        </span>
+      </a>
+
+      <a
+        class="top-contact"
+        href="tel:+595971846432"
+      >
+        ☎
+        <span>0971 846 432</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PORTADA PRINCIPAL -->
+    <section class="hero" id="inicio">
+
+      <div class="wrap hero-grid">
+
+        <div class="hero-copy">
+
+          <span class="eyebrow">
+            <span class="dot"></span>
+            BIENVENIDOS A EDEMIL BURGUER
+          </span>
+
+          <h1>
+            El sabor que
+            <em>te encanta.</em>
+          </h1>
+
+          <p>
+            Hamburguesas, lomitos, panchos,
+            papas fritas y bebidas.
+
+            Elegí lo que más te guste y
+            hacé tu pedido en el local.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              class="btn btn-primary"
+              href="#menu"
+            >
+              Explorar el menú
+              <span>↗</span>
+            </a>
+
+            <a
+              class="btn btn-outline"
+              href="https://wa.me/595971846432"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Consultar por WhatsApp
+            </a>
+
+          </div>
+
+          <div class="hero-micro">
+            <span>✦ Precios en guaraníes</span>
+            <span>✦ Menú fácil de explorar</span>
+          </div>
+
+        </div>
+
+        <!-- IMAGEN PRINCIPAL -->
+        <div class="hero-art" aria-hidden="true">
+
+          <div class="hero-glow"></div>
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Cheeseburger.jpg?width=960"
+            alt=""
+            onerror="this.onerror=null;this.src='assets/img/hamburguesa-doble.svg'"
+          >
+
+          <span class="hero-sticker">
+            ¡QUÉ<br>RICO!
+          </span>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CATÁLOGO DE PRODUCTOS -->
+    <section class="menu-section" id="menu">
+
+      <div class="wrap">
+
+        <div class="heading">
+
+          <div>
+
+            <span class="eyebrow orange">
+              NUESTROS SABORES
+            </span>
+
+            <h2>
+              Elegí tu
+              <em>favorito.</em>
+            </h2>
+
+            <p>
+              Conocé nuestro menú y sus precios.
+            </p>
+
+          </div>
+
+          <span class="heading-pill">
+            🍟 Hecho para antojarte
+          </span>
+
+        </div>
+
+        <!-- FILTROS Y BUSCADOR -->
+        <div class="toolbar">
+
+          <div
+            class="filters"
+            id="filters"
+            role="group"
+            aria-label="Filtrar por categoría"
+          >
+
+            <button
+              class="filter active"
+              data-category="todos"
+              aria-pressed="true"
+            >
+              Todo el menú
+            </button>
+
+            <button
+              class="filter"
+              data-category="hamburguesas"
+              aria-pressed="false"
+            >
+              🍔 Hamburguesas
+            </button>
+
+            <button
+              class="filter"
+              data-category="lomitos"
+              aria-pressed="false"
+            >
+              🥪 Lomitos
+            </button>
+
+            <button
+              class="filter"
+              data-category="panchos"
+              aria-pressed="false"
+            >
+              🌭 Panchos
+            </button>
+
+            <button
+              class="filter"
+              data-category="papas"
+              aria-pressed="false"
+            >
+              🍟 Papas fritas
+            </button>
+
+            <button
+              class="filter"
+              data-category="bebidas"
+              aria-pressed="false"
+            >
+              🥤 Bebidas
+            </button>
+
+          </div>
+
+          <!-- BUSCADOR -->
+          <label class="search">
+
+            <span aria-hidden="true">⌕</span>
+
+            <input
+              id="search"
+              type="search"
+              autocomplete="off"
+              aria-label="Buscar producto"
+              placeholder="Buscar en el menú..."
+            >
+
+          </label>
+
+        </div>
+
+        <!-- CONTADOR DE PRODUCTOS -->
+        <div
+          class="results"
+          id="results"
+          aria-live="polite"
+        ></div>
+
+        <!-- PRODUCTOS GENERADOS POR JAVASCRIPT -->
+        <div
+          class="grid"
+          id="product-grid"
+        ></div>
+
+        <!-- SIN RESULTADOS -->
+        <div
+          class="empty"
+          id="empty"
+          hidden
+        >
+          No encontramos productos con ese nombre.
+          Probá otra búsqueda.
+        </div>
+
+        <p class="image-note">
+          Fotografías ilustrativas de referencia:
+          no corresponden necesariamente a los
+          platos del local. Consultá al personal.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="cta">
+
+      <div class="wrap cta-inner">
+
+        <div>
+
+          <span class="eyebrow orange">
+            ¿YA ELEGISTE?
+          </span>
+
+          <h2>¡Pedí tu favorito!</h2>
+
+          <p>
+            Mostrá el producto al personal
+            o consultá por WhatsApp.
+          </p>
+
+        </div>
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/595971846432"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Consultar por WhatsApp ↗
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+
+    <div class="wrap footer-grid">
+
+      <div>
+
+        <a class="brand brand-bottom" href="#inicio">
+
+          <span class="brand-icon">🍔</span>
+
+          <span>
+            Ede<span>Mil</span>
+            <small>BURGUER</small>
+          </span>
+
+        </a>
+
+        <p>
+          Buen sabor, buenos momentos.
+        </p>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <span>CONTACTO</span>
+
+        <a href="tel:+595971846432">
+          0971 846 432
+        </a>
+
+        <a
+          href="https://wa.me/595971846432"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp ↗
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="wrap copyright">
+
+      <span>
+        © <span id="year"></span>
+        EdeMil Burguer.
+      </span>
+
+      <span>
+        Catálogo digital desarrollado
+        por CRILIZ DIGITAL
+      </span>
+
+    </div>
+
+  </footer>
+
+  <!-- VOLVER ARRIBA -->
+  <a
+    class="backtop"
+    href="#inicio"
+    aria-label="Volver arriba"
+  >
+    ↑
+  </a>
+
+  <!-- ARCHIVOS JAVASCRIPT -->
+  <script src="productos.js"></script>
+  <script src="app.js" defer></script>
+
+</body>
+</html>
