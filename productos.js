@@ -29,10 +29,21 @@ window.EDEMIL_PRODUCTOS = [
 
   {
     id: "h-doble",
+    name: "Hamburguesa doble carne con cheddar",
+    category: "hamburguesas",
+    price: 17000,
+    img: "assets/img/hamburguesa-doble-carne.png",
+    desc: "Para los que prefieren doble carne con cheddar.",
+    tag: "Popular"
+  },
+
+
+  {
+    id: "h-doble",
     name: "Hamburguesa doble carne",
     category: "hamburguesas",
     price: 15000,
-    img: "assets/img/hamburguesa-doble-carne.png",
+    img: "assets/img/h-doble-normal.png",
     desc: "Para los que prefieren doble carne.",
     tag: "Popular"
   },
